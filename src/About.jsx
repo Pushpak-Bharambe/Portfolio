@@ -67,6 +67,7 @@ const LeftSide = styled.div`
   @media (max-width: 768px) {
     border-right: none;
     min-height: 150px;
+    border-bottom: none;
 
     h1 {
       font-size: 2rem;
