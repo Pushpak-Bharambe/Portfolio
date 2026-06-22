@@ -318,9 +318,10 @@ export const Home = () => {
               <a href="mailto:pushpakbharambe20@gmail.com">
                 <EmailIcon></EmailIcon>
               </a>
-              <a href="#">
+              {/* <a href="#">
                 <InstagramIcon></InstagramIcon>
               </a>
+               */}
               <a href="https://www.linkedin.com/in/pushpak-bharambe-a0b934327/?trk=public-profile-join-page">
                 <LinkedInIcon></LinkedInIcon>
               </a>
