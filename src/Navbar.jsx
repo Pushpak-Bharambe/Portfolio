@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-const NavbarDiv = styled.div`
-  height: 80px;
+const NavbarDiv = styled.nav`
   width: 100%;
-  padding: 0 25px;
+  height: 70px;
+  padding: 0 20px;
 
   display: flex;
   justify-content: space-between;
@@ -17,43 +17,70 @@ const NavbarDiv = styled.div`
   background: rgba(11, 12, 16, 0.95);
   backdrop-filter: blur(10px);
 
-  box-shadow: 0 0 10px rgba(102, 252, 241, 0.4);
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+
+  box-sizing: border-box;
 `;
 
 const Logo = styled.img`
-  height: 75px;
-  width: 75px;
+  height: 55px;
+  width: 55px;
   object-fit: contain;
+
+  @media (max-width: 768px) {
+    height: 45px;
+    width: 45px;
+  }
 `;
 
 const Hamburger = styled.div`
   display: none;
-  font-size: 35px;
+  font-size: 30px;
   color: #66fcf1;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1100;
 
   @media (max-width: 768px) {
     display: block;
   }
 `;
 
+const Overlay = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+`;
+
 const Ul = styled.ul`
   display: flex;
   list-style: none;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 
   @media (max-width: 768px) {
     position: fixed;
     top: 0;
     right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 
-    width: 100%;
+    width: 280px;
+    max-width: 80vw;
     height: 100vh;
 
-    background: rgba(11, 12, 16, 0.98);
-    backdrop-filter: blur(15px);
+    background: #0b0c10;
 
     flex-direction: column;
     justify-content: center;
@@ -61,12 +88,11 @@ const Ul = styled.ul`
 
     gap: 2rem;
 
-    transition: all 0.4s ease-in-out;
-
-    margin: 0;
-    padding: 0;
+    transition: right 0.4s ease;
 
     z-index: 999;
+
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -85,10 +111,10 @@ const A = styled.a`
   &::after {
     content: "";
     position: absolute;
-    width: 0%;
-    height: 2px;
     left: 0;
     bottom: -5px;
+    width: 0%;
+    height: 2px;
     background: #66fcf1;
     transition: 0.3s;
   }
@@ -99,10 +125,6 @@ const A = styled.a`
 
   @media (max-width: 768px) {
     font-size: 28px;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 `;
 
@@ -112,9 +134,8 @@ const MobileTitle = styled.h1`
   @media (max-width: 768px) {
     display: block;
     color: #66fcf1;
-    font-size: 40px;
-    margin-bottom: 30px;
-    font-family: "Trebuchet MS", sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -124,10 +145,10 @@ const MobileFooter = styled.div`
   @media (max-width: 768px) {
     display: block;
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     text-align: center;
     color: #c5c6c7;
-    font-size: 14px;
+    font-size: 13px;
   }
 `;
 
@@ -139,57 +160,61 @@ export const Navbar = () => {
   };
 
   return (
-    <NavbarDiv>
-      <Logo src="/PB logo-Photoroom.png" alt="logo" />
+    <>
+      <NavbarDiv>
+        <Logo src="/PB logo-Photoroom.png" alt="PB Logo" />
 
-      <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "✕" : "☰"}
-      </Hamburger>
+        <Hamburger onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "✕" : "☰"}
+        </Hamburger>
 
-      <Ul isOpen={isOpen}>
-        <MobileTitle>Pushpak</MobileTitle>
+        <Ul isOpen={isOpen}>
+          <MobileTitle>Pushpak</MobileTitle>
 
-        <li>
-          <A href="#home" onClick={closeMenu}>
-            Home
-          </A>
-        </li>
+          <li>
+            <A href="#home" onClick={closeMenu}>
+              Home
+            </A>
+          </li>
 
-        <li>
-          <A href="#about" onClick={closeMenu}>
-            About
-          </A>
-        </li>
+          <li>
+            <A href="#about" onClick={closeMenu}>
+              About
+            </A>
+          </li>
 
-        <li>
-          <A href="#skills" onClick={closeMenu}>
-            Skills
-          </A>
-        </li>
+          <li>
+            <A href="#skills" onClick={closeMenu}>
+              Skills
+            </A>
+          </li>
 
-        <li>
-          <A href="#resume" onClick={closeMenu}>
-            Resume
-          </A>
-        </li>
+          <li>
+            <A href="#resume" onClick={closeMenu}>
+              Resume
+            </A>
+          </li>
 
-        <li>
-          <A href="#certificate" onClick={closeMenu}>
-            Certificates
-          </A>
-        </li>
+          <li>
+            <A href="#certificate" onClick={closeMenu}>
+              Certificates
+            </A>
+          </li>
 
-        <li>
-          <A href="#contact" onClick={closeMenu}>
-            Contact
-          </A>
-        </li>
+          <li>
+            <A href="#contact" onClick={closeMenu}>
+              Contact
+            </A>
+          </li>
 
-        <MobileFooter>
-          <p>Pushpak Bharambe</p>
-          <p>Full Stack Java Developer</p>
-        </MobileFooter>
-      </Ul>
-    </NavbarDiv>
+          <MobileFooter>
+            <p>Pushpak Bharambe</p>
+            <p>Full Stack Java Developer</p>
+          </MobileFooter>
+        </Ul>
+      </NavbarDiv>
+
+      <Overlay isOpen={isOpen} onClick={closeMenu} />
+    </>
   );
 };
