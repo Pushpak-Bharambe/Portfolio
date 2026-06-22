@@ -4,7 +4,7 @@ import { useState } from "react";
 const NavbarDiv = styled.nav`
   width: 100%;
   height: 70px;
-  padding: 0 20px;
+  padding: 0 30px;
 
   display: flex;
   justify-content: space-between;
@@ -19,17 +19,19 @@ const NavbarDiv = styled.nav`
 
   box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
 
-  box-sizing: border-box;
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
 `;
 
 const Logo = styled.img`
-  height: 55px;
   width: 55px;
+  height: 55px;
   object-fit: contain;
 
   @media (max-width: 768px) {
-    height: 45px;
     width: 45px;
+    height: 45px;
   }
 `;
 
@@ -52,22 +54,18 @@ const Overlay = styled.div`
     display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
 
-    width: 100%;
-    height: 100vh;
-
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 998;
   }
 `;
 
 const Ul = styled.ul`
   display: flex;
-  list-style: none;
-  gap: 2.5rem;
   align-items: center;
+  gap: 2.5rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 
@@ -91,8 +89,7 @@ const Ul = styled.ul`
     transition: right 0.4s ease;
 
     z-index: 999;
-
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -112,9 +109,11 @@ const A = styled.a`
     content: "";
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -6px;
+
     width: 0%;
     height: 2px;
+
     background: #66fcf1;
     transition: 0.3s;
   }
@@ -124,7 +123,7 @@ const A = styled.a`
   }
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 24px;
   }
 `;
 
@@ -135,7 +134,7 @@ const MobileTitle = styled.h1`
     display: block;
     color: #66fcf1;
     font-size: 32px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -144,11 +143,17 @@ const MobileFooter = styled.div`
 
   @media (max-width: 768px) {
     display: block;
+
     position: absolute;
     bottom: 40px;
+
     text-align: center;
     color: #c5c6c7;
     font-size: 13px;
+
+    p {
+      margin: 5px 0;
+    }
   }
 `;
 
@@ -162,7 +167,7 @@ export const Navbar = () => {
   return (
     <>
       <NavbarDiv>
-        <Logo src="/PB logo-Photoroom.png" alt="PB Logo" />
+        <Logo src="/PB logo-Photoroom.png" alt="Pushpak Logo" />
 
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "✕" : "☰"}

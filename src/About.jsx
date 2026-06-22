@@ -1,113 +1,142 @@
 import styled from "styled-components";
 
-const Aboutdiv = styled.div`
-  height: auto;
+const AboutSection = styled.section`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  padding: 80px 20px;
+  background: #0b0c10;
 `;
 
-const H1 = styled.h1`
-  font-size: xxx-large;
-  font-family:
-    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
-  color: #c6c6c7;
+const HeadingWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 60px;
+`;
+
+const Heading = styled.h1`
+  font-size: 3rem;
+  color: #c5c6c7;
+  font-family: "Trebuchet MS", sans-serif;
 
   .me {
     background: linear-gradient(to right, #66fcf1, #45a29e);
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
   }
 `;
 
-const Div = styled.div`
-  height: 40vh;
-  width: 100%;
-  /* background-color: gray; */
+const Content = styled.div`
+  max-width: 1200px;
+  margin: auto;
+
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 100px;
-  margin-bottom: 110px;
+  align-items: stretch;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 25px;
+  }
 `;
 
-const Whodiv = styled.div`
-  width: 50%;
-  height: 100%;
+const LeftSide = styled.div`
+  flex: 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: solid 2px #66fcf1;
-  border-bottom: solid 2px #66fcf1;
-  border-right: solid 50px #66fcf1;
+
+  border-top: 2px solid #66fcf1;
+  border-bottom: 2px solid #66fcf1;
+  border-right: 20px solid #66fcf1;
+
+  min-height: 300px;
 
   h1 {
-    font-size: xxx-large;
-    font-family: math;
-    font-weight: lighter;
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: "Trebuchet MS", sans-serif;
+
     background: linear-gradient(to right, #66fcf1, #45a29e);
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    border-right: none;
+    min-height: 150px;
+
+    h1 {
+      font-size: 2rem;
+    }
   }
 `;
 
-const Information = styled.div`
-  height: 100%;
-  width: 50%;
-  color: #c6c6c7;
+const RightSide = styled.div`
+  flex: 2;
+
+  border-top: 2px solid #66fcf1;
+  border-bottom: 2px solid #66fcf1;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  line-height: 25px;
-  border-top: solid 2px #66fcf1;
-  border-bottom: solid 2px #66fcf1;
+
+  padding: 30px;
 
   p {
-    margin-left: 20px;
-    font-size: medium;
-    font-weight: 800;
-    font-family:
-      "Times new Roman", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-      Arial, sans-serif;
+    color: #c5c6c7;
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 25px 15px;
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
   }
 `;
 
 export const About = () => {
   return (
-    <>
-      <Aboutdiv>
-        <H1>
-          ABOUT <span className="me">ME?</span>
-        </H1>
-      </Aboutdiv>
+    <AboutSection id="about">
+      <HeadingWrapper>
+        <Heading>
+          ABOUT <span className="me">ME</span>
+        </Heading>
+      </HeadingWrapper>
 
-      <Div>
-        <Whodiv>
-          <h1>Who am I</h1>
-        </Whodiv>
-        <Information>
+      <Content>
+        <LeftSide>
+          <h1>Who Am I?</h1>
+        </LeftSide>
+
+        <RightSide>
           <p>
-            I am a passionate and dedicated Computer Science student with a
-            strong foundation in programming and problem-solving. I have
-            hands-on experience in technologies like Java, Data Structures and
-            Algorithms (DSA), MySQL, JavaScript, React, HTML, and CSS. I enjoy
-            building efficient and user-friendly applications while continuously
-            improving my coding skills. I am particularly interested in software
-            development and full-stack web development, where I can apply both
-            my logical thinking and creativity. I am always eager to learn new
-            technologies, take on challenges, and grow as a developer. My goal
-            is to build impactful solutions and contribute to innovative
-            projects in the tech industry.
+            I am a passionate and dedicated Information Technology student with
+            a strong foundation in programming, problem-solving, and software
+            development. I have hands-on experience with Java, Spring Boot,
+            React JS, JavaScript, MySQL, HTML, CSS, and Data Structures &
+            Algorithms.
+            <br />
+            <br />
+            I enjoy building responsive and user-friendly web applications,
+            designing scalable backend systems, and solving real-world
+            development challenges. My interests lie in Full Stack Development,
+            Software Engineering, and creating impactful digital solutions.
+            <br />
+            <br />I am continuously learning new technologies, improving my
+            coding skills, and working on projects that strengthen my practical
+            knowledge. My goal is to grow as a professional software developer
+            and contribute to innovative products that make a difference.
           </p>
-        </Information>
-      </Div>
-    </>
+        </RightSide>
+      </Content>
+    </AboutSection>
   );
 };

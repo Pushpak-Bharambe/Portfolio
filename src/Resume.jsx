@@ -4,278 +4,196 @@ import DownloadIcon from "@mui/icons-material/Download";
 import WorkIcon from "@mui/icons-material/Work";
 import CodeIcon from "@mui/icons-material/Code";
 
-const Resumediv = styled.div`
-  height: auto;
+const ResumeSection = styled.section`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  padding: 80px 20px;
+  background: #0b0c10;
 `;
-const H1 = styled.h1`
-  font-size: xxx-large;
-  font-family:
-    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-    Arial, sans-serif;
-  color: #c6c6c7;
+
+const HeadingWrapper = styled.div`
+  text-align: center;
+`;
+
+const Heading = styled.h1`
+  font-size: 3rem;
+  color: #c5c6c7;
+  margin-bottom: 20px;
 
   .resume {
     background: linear-gradient(to right, #66fcf1, #45a29e);
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
   }
 `;
 
-const Resumebtn = styled.div`
-  height: auto;
-  width: 100%;
+const ResumeBtnWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+`;
+
+const DownloadButton = styled.a`
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #66fcf1, #45a29e);
+  color: #0b0c10;
+  font-weight: bold;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
+  gap: 10px;
 
-  button {
-    height: 3rem;
-    width: 10%;
-    background: linear-gradient(to right, #66fcf1, #45a29e);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    font-weight: 800;
-    font-family:
-      "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
-      Arial, sans-serif;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
   }
 `;
 
-const Information = styled.div`
-  height: auto;
-  width: 100%;
+const Content = styled.div`
+  max-width: 1200px;
+  margin: auto;
+`;
+
+const Card = styled.div`
+  background: #1f2833;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
   color: #c5c6c7;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  padding: 20px;
-  flex-direction: column;
-  align-items: center;
+  line-height: 1.8;
 `;
 
-const SelfInfo = styled.div`
-  height: auto;
-  width: 60%;
-  background-color: #1f2833;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  line-height: 25px;
-  padding: 20px;
-  border-radius: 10px;
-
-  .name {
-    margin-bottom: 10px;
-  }
-`;
-
-const EducationHead = styled.div`
-  margin-right: 700px;
-  margin-top: 30px;
-  gap: 10px;
+const SectionHeading = styled.div`
   display: flex;
   align-items: center;
+  gap: 12px;
 
-  .logo {
-    height: 50px;
-    width: 50px;
-    color: #1f2833;
-    background: linear-gradient(to right, #66fcf1, #45a29e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-const Education = styled.div`
-  height: auto;
-  width: 60%;
-  background-color: #1f2833;
-  display: flex;
-  flex-direction: column;
-  line-height: 25px;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-`;
-
-const ProjectHead = styled.div`
-  width: 60%;
   margin-top: 40px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  margin-bottom: 20px;
 
-  .logo {
-    height: 50px;
+  color: white;
+
+  .icon {
     width: 50px;
-    color: #1f2833;
+    height: 50px;
     background: linear-gradient(to right, #66fcf1, #45a29e);
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border-radius: 10px;
+    color: #0b0c10;
   }
 
-  @media (max-width: 768px) {
-    width: 90%;
-  }
-`;
-
-const Project = styled.div`
-  width: 60%;
-  background-color: #1f2833;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  line-height: 25px;
-
-  h3 {
-    color: #66fcf1;
-    margin-bottom: 10px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 8px;
-  }
-
-  @media (max-width: 768px) {
-    width: 90%;
+  h2 {
+    margin: 0;
   }
 `;
 
-const SkillsHead = styled.div`
-  width: 60%;
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  .logo {
-    height: 50px;
-    width: 50px;
-    color: #1f2833;
-    background: linear-gradient(to right, #66fcf1, #45a29e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
-`;
-
-const SkillsSection = styled.div`
-  width: 60%;
-  background-color: #1f2833;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-
+const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
 `;
 
 const SkillTag = styled.div`
   background: linear-gradient(to right, #66fcf1, #45a29e);
   color: #0b0c10;
-  padding: 10px 18px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 14px;
 
-  transition: all 0.3s ease;
+  padding: 10px 18px;
+  border-radius: 25px;
+
+  font-weight: bold;
+
+  transition: 0.3s;
 
   &:hover {
     transform: scale(1.05);
-    cursor: pointer;
   }
 `;
 
 export const Resume = () => {
   return (
-    <>
-      <Resumediv>
-        <H1>
+    <ResumeSection id="resume">
+      <HeadingWrapper>
+        <Heading>
           My <span className="resume">Resume</span>
-        </H1>
-      </Resumediv>
+        </Heading>
+      </HeadingWrapper>
 
-      <Resumebtn>
-        <button>
-          <DownloadIcon></DownloadIcon>Download Resume
-        </button>
-      </Resumebtn>
+      <ResumeBtnWrapper>
+        <DownloadButton
+          href="/PushpakResume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <DownloadIcon />
+          Download Resume
+        </DownloadButton>
+      </ResumeBtnWrapper>
 
-      <Information>
-        <SelfInfo>
-          <h1 className="name">Pushpak C. Bharambe</h1>
-          <p>📚 BE--Information Technology</p>
-          <p>📍Nashik,Maharashtra,India</p>
-          <p>📩pushpakbharambe20@gmail.com|📱+91 8551924591</p>
+      <Content>
+        <Card>
+          <h2>Pushpak C. Bharambe</h2>
+
+          <p>📚 BE - Information Technology</p>
+          <p>📍 Nashik, Maharashtra, India</p>
+          <p>📧 pushpakbharambe20@gmail.com</p>
+          <p>📱 +91 8551924591</p>
+
+          <br />
+
           <p>
-            Passionate Information Technology experienced in Computer vision ,
-            Java, DSA, MySQL, JavaScript, and React and
+            Passionate Full Stack Java Developer with strong knowledge of Java,
+            Spring Boot, React JS, MySQL, JavaScript, HTML, CSS, DSA, and
+            Software Development. Focused on building scalable and user-friendly
+            web applications.
           </p>
-          <p> always driven to build impactful solutions.</p>
-        </SelfInfo>
+        </Card>
 
-        <EducationHead>
-          <logo className="logo">
-            <SchoolIcon></SchoolIcon>
-          </logo>
-          <h1>Education</h1>
-        </EducationHead>
+        <SectionHeading>
+          <div className="icon">
+            <SchoolIcon />
+          </div>
+          <h2>Education</h2>
+        </SectionHeading>
 
-        <Education>
+        <Card>
           <h3>BE in Information Technology</h3>
-          <h5>JIT--Jawahar Institute Of Technology,Nashik</h5>
-          <h5>2022-2026 --Current CGPA:6.23</h5>
-        </Education>
+          <p>Jawahar Institute of Technology, Nashik</p>
+          <p>2022 – 2026</p>
+          <p>Current CGPA: 6.76</p>
+        </Card>
 
-        <Education>
-          <h3>Higher Secondary(12th)</h3>
-          <h5>P.O Nahata College,Bhusawal</h5>
-          <h5>2020-2022--66%</h5>
-        </Education>
+        <Card>
+          <h3>Higher Secondary (12th)</h3>
+          <p>P.O. Nahata College, Bhusawal</p>
+          <p>2020 – 2022</p>
+          <p>66%</p>
+        </Card>
 
-        <Education>
-          <h3>Secondary(10th)</h3>
-          <h5>DUPEMS,Savda</h5>
-          <h5>2018-2020--60.2%</h5>
-        </Education>
+        <Card>
+          <h3>Secondary School (10th)</h3>
+          <p>DUPEMS, Savda</p>
+          <p>2018 – 2020</p>
+          <p>60%</p>
+        </Card>
 
-        <ProjectHead>
-          <div className="logo">
+        <SectionHeading>
+          <div className="icon">
             <WorkIcon />
           </div>
-          <h1>Projects</h1>
-        </ProjectHead>
+          <h2>Projects</h2>
+        </SectionHeading>
 
-        <Project>
+        <Card>
           <h3>Company Management System</h3>
 
           <ul>
@@ -285,51 +203,53 @@ export const Resume = () => {
             </li>
 
             <li>
-              Implemented Employee, Manager, and Admin modules with secure
-              role-based access.
+              Implemented Employee, Manager, and Admin modules with role-based
+              access control.
             </li>
 
             <li>
-              Built Expense Management features including expense reports,
-              reimbursement requests, approval workflow, and status tracking.
+              Built Expense Management features including reports,
+              reimbursements, approval workflow, and tracking.
             </li>
 
-            <li>Designed responsive UI using React and Styled Components.</li>
+            <li>Created responsive UI using React and Styled Components.</li>
 
             <li>Integrated REST APIs with Spring Boot and MySQL database.</li>
 
             <li>
-              Features include Employee Management, Expense Hub, Attendance
-              Tracking, Leave Requests, and Dashboard Analytics.
+              Included Attendance Tracking, Leave Management, Dashboard
+              Analytics, and Expense Hub modules.
             </li>
           </ul>
-        </Project>
+        </Card>
 
-        <SkillsHead>
-          <div className="logo">
+        <SectionHeading>
+          <div className="icon">
             <CodeIcon />
           </div>
-          <h1>Skills</h1>
-        </SkillsHead>
+          <h2>Skills</h2>
+        </SectionHeading>
 
-        <SkillsSection>
-          <SkillTag>Java</SkillTag>
-          <SkillTag>Spring Boot</SkillTag>
-          <SkillTag>React JS</SkillTag>
-          <SkillTag>JavaScript</SkillTag>
-          <SkillTag>HTML</SkillTag>
-          <SkillTag>CSS</SkillTag>
-          <SkillTag>MySQL</SkillTag>
-          <SkillTag>Git</SkillTag>
-          <SkillTag>GitHub</SkillTag>
-          <SkillTag>REST API</SkillTag>
-          <SkillTag>Data Structures</SkillTag>
-          <SkillTag>OOP</SkillTag>
-          <SkillTag>DBMS</SkillTag>
-          <SkillTag>Computer Vision</SkillTag>
-          <SkillTag>Problem Solving</SkillTag>
-        </SkillsSection>
-      </Information>
-    </>
+        <Card>
+          <SkillsContainer>
+            <SkillTag>Java</SkillTag>
+            <SkillTag>Spring Boot</SkillTag>
+            <SkillTag>React JS</SkillTag>
+            <SkillTag>JavaScript</SkillTag>
+            <SkillTag>HTML</SkillTag>
+            <SkillTag>CSS</SkillTag>
+            <SkillTag>MySQL</SkillTag>
+            <SkillTag>Git</SkillTag>
+            <SkillTag>GitHub</SkillTag>
+            <SkillTag>REST API</SkillTag>
+            <SkillTag>DSA</SkillTag>
+            <SkillTag>OOP</SkillTag>
+            <SkillTag>DBMS</SkillTag>
+            <SkillTag>Computer Vision</SkillTag>
+            <SkillTag>Problem Solving</SkillTag>
+          </SkillsContainer>
+        </Card>
+      </Content>
+    </ResumeSection>
   );
 };
