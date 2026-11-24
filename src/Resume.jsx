@@ -203,14 +203,11 @@ export const Resume = () => {
 
           <ul>
             <li>
-              Monitor production Linux servers with Nagios and respond to
-              alerts, keeping systems available for the BFSI client.
+              Monitor 50+ production Linux servers using Nagios and respond to
+              alerts for a BFSI client.
             </li>
 
-            <li>
-              Manage user accounts, groups, sudo access and file permissions
-              across servers.
-            </li>
+            <li>Resolved 20+ Linux incident tickets daily.</li>
 
             <li>
               Configure and extend storage using LVM and fstab; manage disk
