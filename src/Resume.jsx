@@ -130,7 +130,7 @@ export const Resume = () => {
 
       <ResumeBtnWrapper>
         <DownloadButton
-          href="/Pushpak Linux Resume.pdf"
+          href="/Pushpak_Bharambe_Linux_System_Administrator_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
