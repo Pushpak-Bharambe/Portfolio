@@ -190,6 +190,80 @@ export const Resume = () => {
           <div className="icon">
             <WorkIcon />
           </div>
+          <h2>Professional Experience </h2>
+        </SectionHeading>
+
+        <Card>
+          <h3>Linux Support Engineer</h3>
+          <h4>
+            Software Scope Technologies, Pune | Project: Customer Churn &
+            Retention (BFSI)
+          </h4>
+
+          <ul>
+            <li>
+              Monitor production Linux servers with Nagios and respond to
+              alerts, keeping systems available for the BFSI client.
+            </li>
+
+            <li>
+              Manage user accounts, groups, sudo access and file permissions
+              across servers.
+            </li>
+
+            <li>
+              Configure and extend storage using LVM and fstab; manage disk
+              quotas.
+            </li>
+
+            <li>
+              Install, configure and troubleshoot OpenSSH, sudo and other
+              open-source packages; resolve boot-level errors including
+              maintenance mode and kernel panic.
+            </li>
+
+            <li>
+              Perform server migrations, upgrades and patching on production
+              servers.
+            </li>
+
+            <li>
+              Monitor, troubleshoot and report daily backup status for all
+              critical production Linux servers
+            </li>
+
+            <li>
+              Handle Linux incident tickets end to end and route issues to
+              Oracle, UNIX or Integration teams as needed.
+            </li>
+
+            <li>
+              Run daily status calls with the on-site team and coordinator;
+              schedule recurring jobs with cron and at.
+            </li>
+
+            <li>
+              Perform process administration (monitor, start, stop, kill) and
+              log housekeeping to keep servers healthy.
+            </li>
+
+            <li>
+              Launched EC2 instances, attached EBS volumes for storage
+              optimization, and built VPCs and subnets with NAT Gateway, route
+              tables and internet gateway.
+            </li>
+
+            <li>
+              Managed authentication and authorization for users through AWS
+              IAM.
+            </li>
+          </ul>
+        </Card>
+
+        <SectionHeading>
+          <div className="icon">
+            <WorkIcon />
+          </div>
           <h2>Projects</h2>
         </SectionHeading>
 
