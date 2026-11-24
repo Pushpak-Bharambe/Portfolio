@@ -130,7 +130,7 @@ export const Resume = () => {
 
       <ResumeBtnWrapper>
         <DownloadButton
-          href="/PushpakResume.pdf"
+          href="/Pushpak Linux Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -151,10 +151,11 @@ export const Resume = () => {
           <br />
 
           <p>
-            Passionate Full Stack Java Developer with strong knowledge of Java,
-            Spring Boot, React JS, MySQL, JavaScript, HTML, CSS, DSA, and
-            Software Development. Focused on building scalable and user-friendly
-            web applications.
+            Linux Administrator with 1 years of experience in server monitoring,
+            user and storage management, patching, and production support on
+            RHEL, CentOS and Ubuntu. Hands-on with AWS (EC2, VPC, IAM, EBS, S3)
+            and ticket-driven incident handling. Seeking a Linux / Cloud Support
+            Engineer role.
           </p>
         </Card>
 
@@ -169,7 +170,7 @@ export const Resume = () => {
           <h3>BE in Information Technology</h3>
           <p>Jawahar Institute of Technology, Nashik</p>
           <p>2022 – 2026</p>
-          <p>Current CGPA: 6.76</p>
+          <p>Current CGPA: 6.78</p>
         </Card>
 
         <Card>
@@ -317,10 +318,10 @@ export const Resume = () => {
             <SkillTag>GitHub</SkillTag>
             <SkillTag>REST API</SkillTag>
             <SkillTag>DSA</SkillTag>
-            <SkillTag>OOP</SkillTag>
-            <SkillTag>DBMS</SkillTag>
-            <SkillTag>Computer Vision</SkillTag>
-            <SkillTag>Problem Solving</SkillTag>
+            <SkillTag>Linux</SkillTag>
+            <SkillTag>AWS</SkillTag>
+            <SkillTag>Nagios</SkillTag>
+            <SkillTag>Service Now</SkillTag>
           </SkillsContainer>
         </Card>
       </Content>

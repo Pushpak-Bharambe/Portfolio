@@ -172,8 +172,8 @@ export const Home = () => {
 
   useEffect(() => {
     const words = [
-      "Web Developer",
-      "Frontend Developer",
+      "Linux System Administrator",
+      " AWS Cloud Enginner",
       "Full Stack Developer",
     ];
 
@@ -223,9 +223,11 @@ export const Home = () => {
 
         <Herodiv>
           <p>
-            I build scalable backend systems using Java and design responsive,
-            user-friendly interfaces with React. Passionate about writing clean
-            code and building real-world web applications.
+            Linux Administrator with 1 years of experience in server monitoring,
+            user and storage management, patching, and production support on
+            RHEL, CentOS and Ubuntu. Hands-on with AWS (EC2, VPC, IAM, EBS, S3)
+            and ticket-driven incident handling. Seeking a Linux / Cloud Support
+            Engineer role.
           </p>
         </Herodiv>
 

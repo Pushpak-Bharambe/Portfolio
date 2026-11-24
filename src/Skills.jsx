@@ -92,6 +92,8 @@ export const Skills = () => {
     { name: "HTML", image: "html.png" },
     { name: "Git", image: "git.png" },
     { name: "JavaScript", image: "js.jpg" },
+    { name: "Linux", image: "linux img.png" },
+    { name: "Aws", image: "aws.jpeg" },
   ];
 
   return (

@@ -119,22 +119,11 @@ export const About = () => {
 
         <RightSide>
           <p>
-            I am a passionate and dedicated Information Technology student with
-            a strong foundation in programming, problem-solving, and software
-            development. I have hands-on experience with Java, Spring Boot,
-            React JS, JavaScript, MySQL, HTML, CSS, and Data Structures &
-            Algorithms.
-            <br />
-            <br />
-            I enjoy building responsive and user-friendly web applications,
-            designing scalable backend systems, and solving real-world
-            development challenges. My interests lie in Full Stack Development,
-            Software Engineering, and creating impactful digital solutions.
-            <br />
-            <br />I am continuously learning new technologies, improving my
-            coding skills, and working on projects that strengthen my practical
-            knowledge. My goal is to grow as a professional software developer
-            and contribute to innovative products that make a difference.
+            Linux Administrator with 1 years of experience in server monitoring,
+            user and storage management, patching, and production support on
+            RHEL, CentOS and Ubuntu. Hands-on with AWS (EC2, VPC, IAM, EBS, S3)
+            and ticket-driven incident handling. Seeking a Linux / Cloud Support
+            Engineer role.
           </p>
         </RightSide>
       </Content>
